@@ -1,0 +1,37 @@
+{
+  "testbed": "Intel Core i5-13420H, 24GB RAM, CPU-only Ollama",
+  "models": [
+    {
+      "model_tag": "llama3.2:1b-instruct-q4_K_M",
+      "n": 42,
+      "mean_quality": 0.634,
+      "mean_ttft_ms": 163.3,
+      "mean_tokens_per_sec": 50.7,
+      "mean_runner_rss_peak_mb": 68.5
+    },
+    {
+      "model_tag": "llama3.2:1b-instruct-q8_0",
+      "n": 40,
+      "mean_quality": 0.591,
+      "mean_ttft_ms": 402.2,
+      "mean_tokens_per_sec": 37.0,
+      "mean_runner_rss_peak_mb": 68.7
+    },
+    {
+      "model_tag": "qwen2.5:1.5b-instruct-q4_K_M",
+      "n": 40,
+      "mean_quality": 0.716,
+      "mean_ttft_ms": 421.3,
+      "mean_tokens_per_sec": 40.5,
+      "mean_runner_rss_peak_mb": 69.0
+    },
+    {
+      "model_tag": "qwen2.5:3b-instruct-q4_K_M",
+      "n": 40,
+      "mean_quality": 0.79,
+      "mean_ttft_ms": 844.5,
+      "mean_tokens_per_sec": 19.9,
+      "mean_runner_rss_peak_mb": 68.9
+    }
+  ]
+}

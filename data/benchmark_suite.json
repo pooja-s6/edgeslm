@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "description": "20 deterministic EdgeSLM Lab prompts across 4 task types",
+  "items": [
+    {
+      "id": "cls_01",
+      "task_type": "classification",
+      "prompt": "Classify the sentiment of this review as positive, negative, or neutral. Reply with only the label.\nReview: The battery life is outstanding and the keyboard feels premium.",
+      "ground_truth": "positive"
+    },
+    {
+      "id": "cls_02",
+      "task_type": "classification",
+      "prompt": "Classify the sentiment of this review as positive, negative, or neutral. Reply with only the label.\nReview: The laptop overheats within minutes and the fan is unbearably loud.",
+      "ground_truth": "negative"
+    },
+    {
+      "id": "cls_03",
+      "task_type": "classification",
+      "prompt": "Classify the sentiment of this review as positive, negative, or neutral. Reply with only the label.\nReview: It arrived on time. Packaging was standard. No strong opinion either way.",
+      "ground_truth": "neutral"
+    },
+    {
+      "id": "cls_04",
+      "task_type": "classification",
+      "prompt": "Is the following statement about biology true or false? Reply with only true or false.\nStatement: Mitochondria are often called the powerhouse of the cell.",
+      "ground_truth": "true"
+    },
+    {
+      "id": "cls_05",
+      "task_type": "classification",
+      "prompt": "Classify this support ticket into one label: billing, technical, or account. Reply with only the label.\nTicket: I cannot reset my password and the verification email never arrives.",
+      "ground_truth": "account"
+    },
+    {
+      "id": "ext_01",
+      "task_type": "extraction",
+      "prompt": "Extract JSON with keys name, age, city from: 'Alice is 29 years old and lives in Austin.' Return only JSON.",
+      "ground_truth": {"name": "Alice", "age": "29", "city": "Austin"}
+    },
+    {
+      "id": "ext_02",
+      "task_type": "extraction",
+      "prompt": "Extract JSON with keys product, price, currency from: 'The UltraBook X costs 999 USD.' Return only JSON.",
+      "ground_truth": {"product": "UltraBook X", "price": "999", "currency": "USD"}
+    },
+    {
+      "id": "ext_03",
+      "task_type": "extraction",
+      "prompt": "Extract JSON with keys from, to, date from: 'Flight from Seattle to Denver on 2024-11-12.' Return only JSON.",
+      "ground_truth": {"from": "Seattle", "to": "Denver", "date": "2024-11-12"}
+    },
+    {
+      "id": "ext_04",
+      "task_type": "extraction",
+      "prompt": "Extract JSON with keys email, domain from: 'Contact support at help@edgeslm.dev for issues.' Return only JSON.",
+      "ground_truth": {"email": "help@edgeslm.dev", "domain": "edgeslm.dev"}
+    },
+    {
+      "id": "ext_05",
+      "task_type": "extraction",
+      "prompt": "Extract JSON with keys cpu, ram_gb from: 'Device uses Intel i5-13420H with 24 GB RAM.' Return only JSON.",
+      "ground_truth": {"cpu": "Intel i5-13420H", "ram_gb": "24"}
+    },
+    {
+      "id": "sum_01",
+      "task_type": "summarization",
+      "prompt": "Summarize in one short sentence: Edge devices can run small language models locally, reducing cloud cost and protecting user privacy, but memory and latency limits force careful quantization choices.",
+      "ground_truth": {
+        "summary": "Local small language models cut cloud cost and protect privacy but need careful quantization under memory and latency limits.",
+        "key_concepts": ["local", "privacy", "quantization", "memory"]
+      }
+    },
+    {
+      "id": "sum_02",
+      "task_type": "summarization",
+      "prompt": "Summarize in one short sentence: Q4 quantization shrinks model size and improves tokens per second on CPUs, while Q8 usually preserves more structured-output accuracy at higher RAM cost.",
+      "ground_truth": {
+        "summary": "Q4 is smaller and faster on CPUs; Q8 keeps more accuracy but uses more RAM.",
+        "key_concepts": ["Q4", "Q8", "RAM", "accuracy"]
+      }
+    },
+    {
+      "id": "sum_03",
+      "task_type": "summarization",
+      "prompt": "Summarize in one short sentence: An adaptive router can pick a smaller model when free RAM is low, trading some quality for stable latency without crashing the laptop OS.",
+      "ground_truth": {
+        "summary": "Adaptive routing chooses smaller models under low RAM to keep latency stable and avoid OS crashes.",
+        "key_concepts": ["router", "RAM", "latency"]
+      }
+    },
+    {
+      "id": "sum_04",
+      "task_type": "summarization",
+      "prompt": "Summarize in one short sentence: Time-to-first-token measures how long a model needs before producing the first output token after a prompt is submitted.",
+      "ground_truth": {
+        "summary": "TTFT is the wait before the first output token after submitting a prompt.",
+        "key_concepts": ["first", "token", "prompt"]
+      }
+    },
+    {
+      "id": "sum_05",
+      "task_type": "summarization",
+      "prompt": "Summarize in one short sentence: Deterministic evaluators score classification, JSON extraction, summarization, and reasoning without calling another LLM as a judge.",
+      "ground_truth": {
+        "summary": "Deterministic evaluators score tasks without using an LLM judge.",
+        "key_concepts": ["deterministic", "evaluators", "LLM"]
+      }
+    },
+    {
+      "id": "rsn_01",
+      "task_type": "reasoning",
+      "prompt": "Compute 17 + 25. Show brief steps, then end with Final answer: <number>",
+      "ground_truth": {"answer": 42}
+    },
+    {
+      "id": "rsn_02",
+      "task_type": "reasoning",
+      "prompt": "A laptop has 24 GB RAM. The OS reserves 3 GB. How many GB remain for models? End with Final answer: <number>",
+      "ground_truth": {"answer": 21}
+    },
+    {
+      "id": "rsn_03",
+      "task_type": "reasoning",
+      "prompt": "If a model generates 40 tokens in 2 seconds, what is tokens per second? End with Final answer: <number>",
+      "ground_truth": {"answer": 20}
+    },
+    {
+      "id": "rsn_04",
+      "task_type": "reasoning",
+      "prompt": "Is 2**3 greater than 10? Answer true or false. End with Final answer: <true|false>",
+      "ground_truth": {"answer": false}
+    },
+    {
+      "id": "rsn_05",
+      "task_type": "reasoning",
+      "prompt": "A batch runs 5 prompts with 3 seconds cooldown between consecutive runs (not before the first). Total cooldown seconds? End with Final answer: <number>",
+      "ground_truth": {"answer": 12}
+    }
+  ]
+}
